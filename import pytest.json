@@ -1,0 +1,17 @@
+import pytest
+import importlib
+from ipynb.fs.full.index import model
+
+# importing testing framework
+
+# importing objects from the Jupyter notebook
+
+# test to ensure the regression model is fitted correctly
+def test_model_fitted():
+    # Check if the model has a summary method (indicating it's fitted)
+    assert hasattr(model, "summary"), "The model is not fitted properly."
+
+# test to ensure R-squared value is within a valid range
+def test_r_squared_value():
+    r_squared = model.rsquared
+    assert 0 <= r_squared <= 1, f"R-squared value {r_squared} is out of bounds."
